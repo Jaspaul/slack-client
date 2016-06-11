@@ -2,11 +2,13 @@
 namespace Slack;
 
 use Slack\GuzzleHttp;
-use Psr\Http\Message\ResponseInterface;
-use React\EventLoop\LoopInterface;
-use React\Promise\Deferred;
 use Slack\Message\Message;
+use React\Promise\Deferred;
+use Slack\GuzzleHttp\Client;
 use Slack\Message\MessageBuilder;
+use React\EventLoop\LoopInterface;
+use Slack\GuzzleHttp\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * A client for connecting to the Slack Web API and calling remote API methods.
@@ -39,10 +41,10 @@ class ApiClient
      * @param Slack\GuzzleHttp\ClientInterface $httpClient A Guzzle client instance to
      *                                               send requests with.
      */
-    public function __construct(LoopInterface $loop, Slack\GuzzleHttp\ClientInterface $httpClient = null)
+    public function __construct(LoopInterface $loop, ClientInterface $httpClient = null)
     {
         $this->loop = $loop;
-        $this->httpClient = $httpClient ?: new Slack\GuzzleHttp\Client();
+        $this->httpClient = $httpClient ?: new Client();
     }
 
     /**
