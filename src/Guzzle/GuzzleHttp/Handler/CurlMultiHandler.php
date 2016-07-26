@@ -1,9 +1,9 @@
 <?php
-namespace Slack\GuzzleHttp\Handler;
+namespace Slack\Guzzle\GuzzleHttp\Handler;
 
-use Slack\GuzzleHttp\Promise as P;
-use Slack\GuzzleHttp\Promise\Promise;
-use Slack\GuzzleHttp\Psr7;
+use Slack\Guzzle\GuzzleHttp\Promise as P;
+use Slack\Guzzle\GuzzleHttp\Promise\Promise;
+use Slack\Guzzle\GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
 /**

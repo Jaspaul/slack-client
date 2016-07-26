@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Cookie;
+namespace Slack\Guzzle\GuzzleHttp\Cookie;
 
 /**
  * Set-Cookie object

@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Promise;
+namespace Slack\Guzzle\GuzzleHttp\Promise;
 
 /**
  * A task queue that executes tasks in a FIFO order.
@@ -8,7 +8,7 @@ namespace Slack\GuzzleHttp\Promise;
  * maintains a constant stack size. You can use the task queue asynchronously
  * by calling the `run()` function of the global task queue in an event loop.
  *
- *     Slack\GuzzleHttp\Promise\queue()->run();
+ *     Slack\Guzzle\GuzzleHttp\Promise\queue()->run();
  */
 class TaskQueue
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;

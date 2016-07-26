@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Promise;
+namespace Slack\Guzzle\GuzzleHttp\Promise;
 
 /**
  * Exception thrown when too many errors occur in the some() or any() methods.

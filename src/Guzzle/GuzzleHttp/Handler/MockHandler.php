@@ -1,9 +1,9 @@
 <?php
-namespace Slack\GuzzleHttp\Handler;
+namespace Slack\Guzzle\GuzzleHttp\Handler;
 
-use Slack\GuzzleHttp\HandlerStack;
-use Slack\GuzzleHttp\Promise\PromiseInterface;
-use Slack\GuzzleHttp\Promise\RejectedPromise;
+use Slack\Guzzle\GuzzleHttp\HandlerStack;
+use Slack\Guzzle\GuzzleHttp\Promise\PromiseInterface;
+use Slack\Guzzle\GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -78,7 +78,7 @@ class MockHandler implements \Countable
 
         $response = $response instanceof \Exception
             ? new RejectedPromise($response)
-            : \Slack\GuzzleHttp\Promise\promise_for($response);
+            : \Slack\Guzzle\GuzzleHttp\Promise\promise_for($response);
 
         if (!$this->onFulfilled && !$this->onRejected) {
             return $response;
@@ -115,7 +115,7 @@ class MockHandler implements \Countable
                 $this->queue[] = $value;
             } else {
                 throw new \InvalidArgumentException('Expected a response or '
-                    . 'exception. Found ' . \Slack\GuzzleHttp\describe_type($value));
+                    . 'exception. Found ' . \Slack\Guzzle\GuzzleHttp\describe_type($value));
             }
         }
     }

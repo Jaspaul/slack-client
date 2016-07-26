@@ -1,9 +1,9 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
-use Slack\GuzzleHttp\Promise\PromisorInterface;
+use Slack\Guzzle\GuzzleHttp\Promise\PromisorInterface;
 use Psr\Http\Message\RequestInterface;
-use Slack\GuzzleHttp\Promise\EachPromise;
+use Slack\Guzzle\GuzzleHttp\Promise\EachPromise;
 
 /**
  * Sends and iterator of requests concurrently using a capped pool size.
@@ -50,7 +50,7 @@ class Pool implements PromisorInterface
             $opts = [];
         }
 
-        $iterable = \Slack\GuzzleHttp\Promise\iter_for($requests);
+        $iterable = \Slack\Guzzle\GuzzleHttp\Promise\iter_for($requests);
         $requests = function () use ($iterable, $client, $opts) {
             foreach ($iterable as $rfn) {
                 if ($rfn instanceof RequestInterface) {
@@ -85,7 +85,7 @@ class Pool implements PromisorInterface
      * @param ClientInterface $client   Client used to send the requests
      * @param array|\Iterator $requests Requests to send concurrently.
      * @param array           $options  Passes through the options available in
-     *                                  {@see Slack\GuzzleHttp\Pool::__construct}
+     *                                  {@see Slack\Guzzle\GuzzleHttp\Pool::__construct}
      *
      * @return array Returns an array containing the response or an exception
      *               in the same order that the requests were sent.

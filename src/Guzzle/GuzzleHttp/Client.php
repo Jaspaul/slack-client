@@ -1,9 +1,9 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
-use Slack\GuzzleHttp\Cookie\CookieJar;
-use Slack\GuzzleHttp\Promise;
-use Slack\GuzzleHttp\Psr7;
+use Slack\Guzzle\GuzzleHttp\Cookie\CookieJar;
+use Slack\Guzzle\GuzzleHttp\Promise;
+use Slack\Guzzle\GuzzleHttp\Psr7;
 use Psr\Http\Message\UriInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -46,7 +46,7 @@ class Client implements ClientInterface
      * - handler: (callable) Function that transfers HTTP requests over the
      *   wire. The function is called with a Psr7\Http\Message\RequestInterface
      *   and array of transfer options, and must return a
-     *   Slack\GuzzleHttp\Promise\PromiseInterface that is fulfilled with a
+     *   Slack\Guzzle\GuzzleHttp\Promise\PromiseInterface that is fulfilled with a
      *   Psr7\Http\Message\ResponseInterface on success. "handler" is a
      *   constructor only option that cannot be overridden in per/request
      *   options. If no handler is provided, a default handler will be created
@@ -58,7 +58,7 @@ class Client implements ClientInterface
      *
      * @param array $config Client configuration settings.
      *
-     * @see \Slack\GuzzleHttp\RequestOptions for a list of available request options.
+     * @see \Slack\Guzzle\GuzzleHttp\RequestOptions for a list of available request options.
      */
     public function __construct(array $config = [])
     {

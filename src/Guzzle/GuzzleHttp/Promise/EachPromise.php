@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Promise;
+namespace Slack\Guzzle\GuzzleHttp\Promise;
 
 /**
  * Represents a promise that iterates over many promises and invokes

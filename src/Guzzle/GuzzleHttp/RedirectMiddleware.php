@@ -1,10 +1,10 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
-use Slack\GuzzleHttp\Exception\BadResponseException;
-use Slack\GuzzleHttp\Exception\TooManyRedirectsException;
-use Slack\GuzzleHttp\Promise\PromiseInterface;
-use Slack\GuzzleHttp\Psr7;
+use Slack\Guzzle\GuzzleHttp\Exception\BadResponseException;
+use Slack\Guzzle\GuzzleHttp\Exception\TooManyRedirectsException;
+use Slack\Guzzle\GuzzleHttp\Promise\PromiseInterface;
+use Slack\Guzzle\GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -13,7 +13,7 @@ use Psr\Http\Message\UriInterface;
  * Request redirect middleware.
  *
  * Apply this middleware like other middleware using
- * {@see Slack\GuzzleHttp\Middleware::redirect()}.
+ * {@see Slack\Guzzle\GuzzleHttp\Middleware::redirect()}.
  */
 class RedirectMiddleware
 {

@@ -1,9 +1,9 @@
 <?php
-namespace Slack\GuzzleHttp\Exception;
+namespace Slack\Guzzle\GuzzleHttp\Exception;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Slack\GuzzleHttp\Promise\PromiseInterface;
+use Slack\Guzzle\GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * HTTP Request exception

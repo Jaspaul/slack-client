@@ -1,12 +1,12 @@
 <?php
-namespace Slack\GuzzleHttp\Handler;
+namespace Slack\Guzzle\GuzzleHttp\Handler;
 
-use Slack\GuzzleHttp\Exception\RequestException;
-use Slack\GuzzleHttp\Exception\ConnectException;
-use Slack\GuzzleHttp\Promise\FulfilledPromise;
-use Slack\GuzzleHttp\Promise\RejectedPromise;
-use Slack\GuzzleHttp\Psr7;
-use Slack\GuzzleHttp\Psr7\LazyOpenStream;
+use Slack\Guzzle\GuzzleHttp\Exception\RequestException;
+use Slack\Guzzle\GuzzleHttp\Exception\ConnectException;
+use Slack\Guzzle\GuzzleHttp\Promise\FulfilledPromise;
+use Slack\Guzzle\GuzzleHttp\Promise\RejectedPromise;
+use Slack\Guzzle\GuzzleHttp\Psr7;
+use Slack\Guzzle\GuzzleHttp\Psr7\LazyOpenStream;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -87,7 +87,7 @@ class CurlFactory implements CurlFactoryInterface
      * @param EasyHandle           $easy
      * @param CurlFactoryInterface $factory Dictates how the handle is released
      *
-     * @return \Slack\GuzzleHttp\Promise\PromiseInterface
+     * @return \Slack\Guzzle\GuzzleHttp\Promise\PromiseInterface
      */
     public static function finish(
         callable $handler,
@@ -329,7 +329,7 @@ class CurlFactory implements CurlFactoryInterface
         if (isset($options['sink'])) {
             $sink = $options['sink'];
             if (!is_string($sink)) {
-                $sink = \Slack\GuzzleHttp\Psr7\stream_for($sink);
+                $sink = \Slack\Guzzle\GuzzleHttp\Psr7\stream_for($sink);
             } elseif (!is_dir(dirname($sink))) {
                 // Ensure that the directory exists before failing in curl.
                 throw new \RuntimeException(sprintf(
@@ -415,7 +415,7 @@ class CurlFactory implements CurlFactoryInterface
         }
 
         if (!empty($options['debug'])) {
-            $conf[CURLOPT_STDERR] = \Slack\GuzzleHttp\debug_resource($options['debug']);
+            $conf[CURLOPT_STDERR] = \Slack\Guzzle\GuzzleHttp\debug_resource($options['debug']);
             $conf[CURLOPT_VERBOSE] = true;
         }
     }

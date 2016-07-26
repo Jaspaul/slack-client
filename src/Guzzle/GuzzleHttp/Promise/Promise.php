@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Promise;
+namespace Slack\Guzzle\GuzzleHttp\Promise;
 
 /**
  * Promises/A+ implementation that avoids recursion when possible.

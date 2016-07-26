@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
 /**
  * Expands URI templates. Userland implementation of PECL uri_template.

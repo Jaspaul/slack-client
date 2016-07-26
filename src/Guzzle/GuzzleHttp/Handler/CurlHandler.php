@@ -1,7 +1,7 @@
 <?php
-namespace Slack\GuzzleHttp\Handler;
+namespace Slack\Guzzle\GuzzleHttp\Handler;
 
-use Slack\GuzzleHttp\Psr7;
+use Slack\Guzzle\GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
 /**

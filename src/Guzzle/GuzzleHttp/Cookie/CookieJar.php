@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Cookie;
+namespace Slack\Guzzle\GuzzleHttp\Cookie;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

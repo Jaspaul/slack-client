@@ -1,8 +1,8 @@
 <?php
-namespace Slack\GuzzleHttp\Promise;
+namespace Slack\Guzzle\GuzzleHttp\Promise;
 
 // Don't redefine the functions if included multiple times.
-if (function_exists('Slack\GuzzleHttp\Promise\promise_for')) {
+if (function_exists('Slack\Guzzle\GuzzleHttp\Promise\promise_for')) {
     return;
 }
 
@@ -15,7 +15,7 @@ if (function_exists('Slack\GuzzleHttp\Promise\promise_for')) {
  *
  * <code>
  * while ($eventLoop->isRunning()) {
- *     Slack\GuzzleHttp\Promise\queue()->run();
+ *     Slack\Guzzle\GuzzleHttp\Promise\queue()->run();
  * }
  * </code>
  *
@@ -166,7 +166,7 @@ function inspect(PromiseInterface $promise)
  * @param PromiseInterface[] $promises Traversable of promises to wait upon.
  *
  * @return array
- * @see Slack\GuzzleHttp\Promise\inspect for the inspection state array format.
+ * @see Slack\Guzzle\GuzzleHttp\Promise\inspect for the inspection state array format.
  */
 function inspect_all($promises)
 {
@@ -237,7 +237,7 @@ function all($promises)
  * fulfilled with an array that contains the fulfillment values of the winners
  * in order of resolution.
  *
- * This prommise is rejected with a {@see Slack\GuzzleHttp\Promise\AggregateException}
+ * This prommise is rejected with a {@see Slack\Guzzle\GuzzleHttp\Promise\AggregateException}
  * if the number of fulfilled promises is less than the desired $count.
  *
  * @param int   $count    Total number of promises.
@@ -300,7 +300,7 @@ function any($promises)
  * @param mixed $promises Promises or values.
  *
  * @return Promise
- * @see Slack\GuzzleHttp\Promise\inspect for the inspection state array format.
+ * @see Slack\Guzzle\GuzzleHttp\Promise\inspect for the inspection state array format.
  */
 function settle($promises)
 {
@@ -451,7 +451,7 @@ function is_settled(PromiseInterface $promise)
  * This can lead to less verbose code when doing lots of sequential async calls
  * with minimal processing in between.
  *
- *     use Slack\GuzzleHttp\Promise;
+ *     use Slack\Guzzle\GuzzleHttp\Promise;
  *
  *     function createPromise($value) {
  *         return new Promise\FulfilledPromise($value);

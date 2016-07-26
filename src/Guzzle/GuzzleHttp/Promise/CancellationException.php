@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Promise;
+namespace Slack\Guzzle\GuzzleHttp\Promise;
 
 /**
  * Exception that is set as the reason for a promise that has been cancelled.

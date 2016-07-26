@@ -1,12 +1,12 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
-use Slack\GuzzleHttp\Cookie\CookieJarInterface;
-use Slack\GuzzleHttp\Exception\ClientException;
-use Slack\GuzzleHttp\Exception\RequestException;
-use Slack\GuzzleHttp\Exception\ServerException;
-use Slack\GuzzleHttp\Promise\RejectedPromise;
-use Slack\GuzzleHttp\Psr7;
+use Slack\Guzzle\GuzzleHttp\Cookie\CookieJarInterface;
+use Slack\Guzzle\GuzzleHttp\Exception\ClientException;
+use Slack\Guzzle\GuzzleHttp\Exception\RequestException;
+use Slack\Guzzle\GuzzleHttp\Exception\ServerException;
+use Slack\Guzzle\GuzzleHttp\Promise\RejectedPromise;
+use Slack\Guzzle\GuzzleHttp\Psr7;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -31,7 +31,7 @@ final class Middleware
                 if (empty($options['cookies'])) {
                     return $handler($request, $options);
                 } elseif (!($options['cookies'] instanceof CookieJarInterface)) {
-                    throw new \InvalidArgumentException('cookies must be an instance of Slack\GuzzleHttp\Cookie\CookieJarInterface');
+                    throw new \InvalidArgumentException('cookies must be an instance of Slack\Guzzle\GuzzleHttp\Cookie\CookieJarInterface');
                 }
                 $cookieJar = $options['cookies'];
                 $request = $cookieJar->withCookieHeader($request);
@@ -197,7 +197,7 @@ final class Middleware
                             : null;
                         $message = $formatter->format($request, $response, $reason);
                         $logger->notice($message);
-                        return \Slack\GuzzleHttp\Promise\rejection_for($reason);
+                        return \Slack\Guzzle\GuzzleHttp\Promise\rejection_for($reason);
                     }
                 );
             };

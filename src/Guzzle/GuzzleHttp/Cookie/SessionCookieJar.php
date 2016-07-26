@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Cookie;
+namespace Slack\Guzzle\GuzzleHttp\Cookie;
 
 /**
  * Persists cookies in the client session

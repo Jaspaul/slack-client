@@ -1,8 +1,8 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
-use Slack\GuzzleHttp\Promise\PromiseInterface;
-use Slack\GuzzleHttp\Exception\GuzzleException;
+use Slack\Guzzle\GuzzleHttp\Promise\PromiseInterface;
+use Slack\Guzzle\GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;

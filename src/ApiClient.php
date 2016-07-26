@@ -1,13 +1,13 @@
 <?php
 namespace Slack;
 
-use Slack\GuzzleHttp;
+use Slack\Guzzle\GuzzleHttp;
 use Slack\Message\Message;
 use React\Promise\Deferred;
-use Slack\GuzzleHttp\Client;
+use Slack\Guzzle\GuzzleHttp\Client;
 use Slack\Message\MessageBuilder;
 use React\EventLoop\LoopInterface;
-use Slack\GuzzleHttp\ClientInterface;
+use Slack\Guzzle\GuzzleHttp\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -26,7 +26,7 @@ class ApiClient
     protected $token;
 
     /**
-     * @var Slack\GuzzleHttp\ClientInterface A Guzzle HTTP client.
+     * @var Slack\Guzzle\GuzzleHttp\ClientInterface A Guzzle HTTP client.
      */
     protected $httpClient;
 
@@ -38,7 +38,7 @@ class ApiClient
     /**
      * Creates a new API client instance.
      *
-     * @param Slack\GuzzleHttp\ClientInterface $httpClient A Guzzle client instance to
+     * @param Slack\Guzzle\GuzzleHttp\ClientInterface $httpClient A Guzzle client instance to
      *                                               send requests with.
      */
     public function __construct(LoopInterface $loop, ClientInterface $httpClient = null)

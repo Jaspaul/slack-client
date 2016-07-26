@@ -1,7 +1,7 @@
 <?php
-namespace Slack\GuzzleHttp\Handler;
+namespace Slack\Guzzle\GuzzleHttp\Handler;
 
-use Slack\GuzzleHttp\Psr7\Response;
+use Slack\Guzzle\GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
@@ -50,8 +50,8 @@ final class EasyHandle
 
         // HTTP-version SP status-code SP reason-phrase
         $startLine = explode(' ', array_shift($this->headers), 3);
-        $headers = \Slack\GuzzleHttp\headers_from_lines($this->headers);
-        $normalizedKeys = \Slack\GuzzleHttp\normalize_header_keys($headers);
+        $headers = \Slack\Guzzle\GuzzleHttp\headers_from_lines($this->headers);
+        $normalizedKeys = \Slack\Guzzle\GuzzleHttp\normalize_header_keys($headers);
 
         if (!empty($this->options['decode_content'])
             && isset($normalizedKeys['content-encoding'])

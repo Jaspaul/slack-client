@@ -1,4 +1,4 @@
 <?php
-namespace Slack\GuzzleHttp\Exception;
+namespace Slack\Guzzle\GuzzleHttp\Exception;
 
 class TransferException extends \RuntimeException implements GuzzleException {}

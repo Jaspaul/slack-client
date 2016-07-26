@@ -1,10 +1,10 @@
 <?php
-namespace Slack\GuzzleHttp;
+namespace Slack\Guzzle\GuzzleHttp;
 
-use Slack\GuzzleHttp\Handler\CurlHandler;
-use Slack\GuzzleHttp\Handler\CurlMultiHandler;
-use Slack\GuzzleHttp\Handler\Proxy;
-use Slack\GuzzleHttp\Handler\StreamHandler;
+use Slack\Guzzle\GuzzleHttp\Handler\CurlHandler;
+use Slack\Guzzle\GuzzleHttp\Handler\CurlMultiHandler;
+use Slack\Guzzle\GuzzleHttp\Handler\Proxy;
+use Slack\Guzzle\GuzzleHttp\Handler\StreamHandler;
 use Psr\Http\Message\StreamInterface;
 
 /**
@@ -113,7 +113,7 @@ function choose_handler()
             ? Proxy::wrapStreaming($handler, new StreamHandler())
             : new StreamHandler();
     } elseif (!$handler) {
-        throw new \RuntimeException('Slack\GuzzleHttp requires cURL, the '
+        throw new \RuntimeException('Slack\Guzzle\GuzzleHttp requires cURL, the '
             . 'allow_url_fopen ini setting, or a custom HTTP handler.');
     }
 
@@ -130,7 +130,7 @@ function default_user_agent()
     static $defaultAgent = '';
 
     if (!$defaultAgent) {
-        $defaultAgent = 'Slack\GuzzleHttp/' . Client::VERSION;
+        $defaultAgent = 'Slack\Guzzle\GuzzleHttp/' . Client::VERSION;
         if (extension_loaded('curl')) {
             $defaultAgent .= ' curl/' . \curl_version()['version'];
         }

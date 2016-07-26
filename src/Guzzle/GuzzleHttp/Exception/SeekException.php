@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Exception;
+namespace Slack\Guzzle\GuzzleHttp\Exception;
 
 use Psr\Http\Message\StreamInterface;
 

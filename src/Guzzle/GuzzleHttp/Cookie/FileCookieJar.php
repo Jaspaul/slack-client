@@ -1,5 +1,5 @@
 <?php
-namespace Slack\GuzzleHttp\Cookie;
+namespace Slack\Guzzle\GuzzleHttp\Cookie;
 
 /**
  * Persists non-session cookies using a JSON formatted file
